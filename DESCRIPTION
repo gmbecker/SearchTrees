@@ -1,7 +1,7 @@
 Package: SearchTrees
 Type: Package
 Title: Spatial Search Trees
-Version: 0.5.3.1
+Version: 0.5.4
 Date: 2022-10-03
 Author: Gabriel Becker
 Maintainer: Gabriel Becker <gabembecker@gmail.com>
