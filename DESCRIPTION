@@ -1,0 +1,18 @@
+Package: SearchTrees
+Type: Package
+Title: Spatial Search Trees
+Version: 0.5.3
+Date: 2022-05-09
+Author: Gabriel Becker
+Maintainer: Gabriel Becker <gabembecker@gmail.com>
+Description: The QuadTree data structure is useful for fast,
+	     neighborhood-restricted lookups. We use it to implement fast k-Nearest
+        Neighbor and Rectangular range lookups in 2 dimenions. The
+        primary target is high performance interactive graphics.
+Depends: methods
+License: LGPL
+LazyLoad: yes
+Repository: CRAN
+NeedsCompilation: yes
+Packaged: 2022-05-10 07:58:09 UTC; gabrielbecker
+Date/Publication: 2022-05-11 23:20:10 UTC
