@@ -1,8 +1,8 @@
 Package: SearchTrees
 Type: Package
 Title: Spatial Search Trees
-Version: 0.5.3
-Date: 2022-05-09
+Version: 0.5.3.1
+Date: 2022-10-03
 Author: Gabriel Becker
 Maintainer: Gabriel Becker <gabembecker@gmail.com>
 Description: The QuadTree data structure is useful for fast,

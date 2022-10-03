@@ -73,15 +73,15 @@ R_Build_Quadtree_Rect(SEXP Rx1, SEXP Ry1, SEXP Rx2, SEXP Ry2, SEXP RxMax, SEXP R
 				    R_NilValue ) );
   R_RegisterCFinalizerEx(ptr, &R_free_quad_tree, 1);
   SET_SLOT( ans, Rf_install( "ref" ), ptr );
-  SET_SLOT( ans, Rf_install( "points" ), ScalarInteger( len ) );
+  SET_SLOT( ans, Rf_install( "points" ), PROTECT(ScalarInteger( len ) ));
   
-  SET_SLOT( ans, Rf_install( "numNodes" ), ScalarInteger(attr[0] ));
-  SET_SLOT( ans, Rf_install( "dataNodes" ), ScalarInteger(attr[1] ) );
-  SET_SLOT( ans, Rf_install( "maxDepth" ), ScalarInteger(attr[2] ) );
+  SET_SLOT( ans, Rf_install( "numNodes" ), PROTECT(ScalarInteger(attr[0] )));
+  SET_SLOT( ans, Rf_install( "dataNodes" ), PROTECT(ScalarInteger(attr[1] ) ));
+  SET_SLOT( ans, Rf_install( "maxDepth" ), PROTECT(ScalarInteger(attr[2] ) ));
 
-  SET_SLOT( ans, Rf_install( "maxBucket" ), ScalarInteger( attr[3] ) );
+  SET_SLOT( ans, Rf_install( "maxBucket" ), PROTECT(ScalarInteger( attr[3] ) ));
   
-  UNPROTECT(3);
+  UNPROTECT(8);
   return ans;  
 
 }
@@ -131,13 +131,13 @@ R_Build_Quadtree_Pt(SEXP Rx, SEXP Ry, SEXP RxMax, SEXP RxMin, SEXP RyMax, SEXP R
   R_RegisterCFinalizerEx(ptr, &R_free_quad_tree, 1);
   SET_SLOT( ans, Rf_install( "ref" ), ptr );
   SET_SLOT( ans, Rf_install( "data" ), ptr2 );
-  SET_SLOT( ans, Rf_install( "points" ), ScalarInteger( len ) );
-  SET_SLOT( ans, Rf_install( "numNodes" ), ScalarInteger(attr[0] ));
-  SET_SLOT( ans, Rf_install( "dataNodes" ), ScalarInteger(attr[1] ) );
-  SET_SLOT( ans, Rf_install( "maxDepth" ), ScalarInteger(attr[2] ) );
+  SET_SLOT( ans, Rf_install( "points" ), PROTECT(ScalarInteger( len ) ));
+  SET_SLOT( ans, Rf_install( "numNodes" ), PROTECT(ScalarInteger(attr[0] )));
+  SET_SLOT( ans, Rf_install( "dataNodes" ), PROTECT(ScalarInteger(attr[1] ) ));
+  SET_SLOT( ans, Rf_install( "maxDepth" ), PROTECT(ScalarInteger(attr[2] ) ));
 
-  SET_SLOT( ans, Rf_install( "maxBucket" ), ScalarInteger( attr[3] ) );
-  UNPROTECT(4);
+  SET_SLOT( ans, Rf_install( "maxBucket" ), PROTECT(ScalarInteger( attr[3] ) ));
+  UNPROTECT(9);
   free(attr);
   return ans;  
 }
