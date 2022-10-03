@@ -1,7 +1,7 @@
 Package: SearchTrees
 Type: Package
 Title: Spatial Search Trees
-Version: 0.5.4
+Version: 0.5.5
 Date: 2022-10-03
 Author: Gabriel Becker
 Maintainer: Gabriel Becker <gabembecker@gmail.com>
@@ -12,7 +12,7 @@ Description: The QuadTree data structure is useful for fast,
 Depends: methods
 License: LGPL
 LazyLoad: yes
-Repository: CRAN
+URL: https://github.com/gmbecker/SearchTrees
+BugReports: https://github.com/gmbecker/SearchTrees/issues
 NeedsCompilation: yes
-Packaged: 2022-05-10 07:58:09 UTC; gabrielbecker
-Date/Publication: 2022-05-11 23:20:10 UTC
+
