@@ -30,7 +30,8 @@ knnLookup(tree, newx, newy, newdat, columns = 1:2, k = 5)
     Numeric. Columns x and y values can be found in within \code{newdat}.
   }
   \item{k}{
-    Numeric. Number of neighbors to find for each point.
+    Numeric. Number of neighbors to find for each point. Must be
+    \code{<=} the total number of observations encoded in \code{tree}.
   }
 }
 \value{

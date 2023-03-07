@@ -85,14 +85,17 @@ rectTree = function(x1, x2, y1, y2, maxDepth = 7, minNodeArea, ...)
     .Call(C_Build_Quadtree_Rect, x1, x2, y1, y2, max(x2), min(x1), max(y2), min(y1), maxDepth)
   }
 setGeneric("knnLookup",
-           function(tree, newx, newy, newdat, columns=1:2,   k = 5)
+           function(tree, newx, newy, newdat, columns=1:2, k = 5)
            standardGeneric("knnLookup")
            )
 setMethod("knnLookup", "QuadTree",
-          function(tree, newx, newy, newdat, columns,  k)
+          function(tree, newx, newy, newdat, columns, k)
           {
 
             k = as.integer(k)
+            if(k > tree@totalData)
+              stop("got k (", k, ") larger than total number of observations encoded in the tree (",
+                   tree@totalData, ")")
             if(missing(newx))
               newx = as.numeric(newdat[,columns[1]])
             if(missing(newy))
